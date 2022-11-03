@@ -4,6 +4,7 @@ public class Human {
     String name;
     int age;
 
+    //コンストラクタ
     Human(String name, int age) {
         this.name = name;
         this.age = age;
