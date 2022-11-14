@@ -12,12 +12,14 @@ public class Fighter {
     }
 
     public void attack(Fighter enemy) {
-        enemy.hitPoint -= this.power;
+        enemy.setHitPoint(enemy.getHitPoint() - this.power);
         System.out.println(this.name + " は " + enemy.name + " に " + this.power + " ダメージを与えた。");
+        System.out.println(enemy.getName() + " の残り hitPoint : " + enemy.getHitPoint());
     }
 
     public boolean isAlive() {
         if (this.hitPoint <= 0) {
+            System.out.println(this.name + " は倒れた。");
             return false;
         } else {
             return true;
@@ -29,11 +31,7 @@ public class Fighter {
     }
 
     public void setHitPoint(int hitPoint) {
-        if (hitPoint > 0) {
-            this.hitPoint = hitPoint;
-        } else {
-            System.out.println("正確な値を入力してください");
-        }
+        this.hitPoint = hitPoint;
     }
 
     public String getName() {
